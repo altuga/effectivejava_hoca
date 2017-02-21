@@ -1,9 +1,7 @@
-# Effective Java Examples
+# Effective Java Örnekleri
 
-Diese Quelltexte stammen aus dem Buch "Effective Java Second Edition", geschrieben von Joshua Bloch.
+http://www.oracle.com/technetwork/articles/java/bloch-effective-08-qa-140880.html
 
-Die Quellen sind beinahe unverändert. Lediglich die Packetnamen wurden von mir angepasst.
 
-Die Originalquellen können hier herunter geladen werden: http://java.sun.com/docs/books/effective/index.html
 
 # coreeffectivejava
