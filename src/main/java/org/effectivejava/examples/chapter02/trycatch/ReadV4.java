@@ -26,11 +26,5 @@ public class ReadV4 {
 
     }
 
-    public static void main(String[] args) throws Exception{
 
-          ReadV4.copy(
-                  "/Users/altuga/Documents/openshift-egitimi-plani.txt",
-                  "/Users/altuga/Documents/openshift-egitimi-plani3.txt");
-
-    }
 }

@@ -22,10 +22,5 @@ public class Read {
 
     }
 
-    public static void main(String[] args) throws Exception{
-        System.out.println(
-                Read.
-                        firstLineOfFile("/Users/altuga/Documents/openshift-egitimi-plani.txt"));
 
-    }
 }

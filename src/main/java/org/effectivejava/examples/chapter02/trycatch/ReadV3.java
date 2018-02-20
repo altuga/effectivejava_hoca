@@ -20,10 +20,5 @@ public class ReadV3 {
         }
     }
 
-    public static void main(String[] args) throws Exception{
-        System.out.println(
-                ReadV3.
-                        firstLineOfFile("/Users/altuga/Documents/openshift-egitimi-plan.txt"));
 
-    }
 }

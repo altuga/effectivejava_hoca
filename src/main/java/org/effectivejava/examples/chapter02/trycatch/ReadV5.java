@@ -24,13 +24,4 @@ public class ReadV5 {
 
     }
 
-    public static void main(String[] args) throws Exception{
-
-          String okunan = ReadV5.firstLineOfFile(
-                  "/Users/altuga/Documents/openshift-egitimi-plan.txt",
-                  "okunamadi");
-
-        System.out.println(" Sonuc " + okunan);
-
-    }
 }
