@@ -64,5 +64,7 @@ public class Serum {
 	public static void main(String[] args) {
 		Serum typeB = new Serum.Builder(240, 8)
 				.magnesium(100).creatine(35).globulin(27).build();
+
+		System.out.println(typeB.carbohydrate);
 	}
 }
