@@ -3,8 +3,11 @@ package org.effectivejava.examples.chapter08.item48;
 
 import java.math.BigDecimal;
 
-public class Arithmetic {
+public class Candy {
 	public static void main(String[] args) {
+
+		basicCalculation();
+		midCalculation();
 
 		howManyCandies1();
 		System.out.println();
@@ -13,6 +16,24 @@ public class Arithmetic {
 		System.out.println();
 
 
+
+
+	}
+
+	private static void midCalculation() {
+		// floating point calculation
+		final double amount1 = 2.0;
+		final double amount2 = 1.1;
+		System.out.println("difference between 2.0 and 1.1 using double is: " + (amount1 - amount2));
+
+		// Use BigDecimal for financial calculation
+		final BigDecimal amount3 = new BigDecimal("2.0");
+		final BigDecimal amount4 = new BigDecimal("1.1");
+		System.out.println("difference between 2.0 and 1.1 using BigDecimal is: " + (amount3.subtract(amount4)));
+	}
+
+	public static void basicCalculation() {
+		System.out.println(1.03 - .42);
 	}
 
 	// Broken - uses floating point for monetary calculation!
