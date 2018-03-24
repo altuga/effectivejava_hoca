@@ -1,34 +1,33 @@
 package org.effectivejava.examples.streams;
 
+import java.io.SequenceInputStream;
 import java.math.BigInteger;
-import java.util.stream.LongStream;
-
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.stream.BaseStream;
+import java.util.stream.Stream;
 
 public class ParallelV2 {
 
-    final static BigInteger TWO = BigInteger.valueOf(2);
+    public static final ArrayList<Long> myList = new ArrayList<>();
+
+
 
     public static void main(String[] args) {
 
+        Stream<Long> baseStream =
+                myList.stream();
 
+        long start = System.nanoTime();
 
-        long result = pi(1_000_0000);
-        System.out.println("Result : " + result );
+        for (int i = 0; i< 1_000_0000; i ++) {
+            myList.add((long)i);
+        }
 
-    }
-
-
-
-
-    static long pi(long n) {
-
-        return LongStream.rangeClosed(2, n)
-
-                .mapToObj(BigInteger::valueOf)
-
-                .filter(i -> i.isProbablePrime(50)).parallel()
-
-                .count();
-
+        baseStream.map(value -> new BigInteger(value+""))
+                .filter( value -> value.isProbablePrime(50)).count();
+        long duration = (System.nanoTime() - start) / 1_000_000;;
+        System.out.println("Result: " + duration + " - "
+                + baseStream.isParallel());
     }
 }

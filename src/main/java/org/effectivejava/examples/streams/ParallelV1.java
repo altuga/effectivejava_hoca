@@ -11,9 +11,7 @@ public class ParallelV1 {
     final static BigInteger TWO = BigInteger.valueOf(2);
 
     public static void main(String[] args) {
-
-
-
+        long start = System.nanoTime();
 
         primes().map(p -> TWO.pow(p.intValueExact()).subtract(ONE))
 
@@ -22,6 +20,9 @@ public class ParallelV1 {
                 .limit(20)
 
                 .forEach(System.out::println);
+
+        long duration = (System.nanoTime() - start) / 1_000_000;;
+        System.out.println("Result: " + duration);
 
     }
 
