@@ -19,5 +19,6 @@ public class ParseUtil {
     public static void main(String[] args) {
         ParseUtil.parse(200);
         System.out.println("bitti");
+
     }
 }
