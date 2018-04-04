@@ -27,29 +27,23 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 
- * Peaceful state.
+ * Angry state.
  *
  */
-public class PeacefulState implements State {
+public class SeatIsFullState implements State {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(PeacefulState.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(SeatIsFullState.class);
 
-  private Mammoth mammoth;
+  private SeatSales seatSales;
 
-  public PeacefulState(Mammoth mammoth) {
-    this.mammoth = mammoth;
+  public SeatIsFullState(SeatSales seatSales) {
+    this.seatSales = seatSales;
   }
 
   @Override
   public void observe() {
-    LOGGER.info("{} is calm and peaceful.", mammoth);
+    LOGGER.info("{} Seat Is Full, sorry!", seatSales);
   }
-
-  @Override
-  public void onEnterState() {
-    LOGGER.info("{} calms down.", mammoth);
-  }
-
 
 
 }

@@ -22,44 +22,30 @@
  */
 package org.effectivejava.examples.exceptions.state;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 
- * Mammoth has internal state that defines its behavior.
- * 
+ * Peaceful state.
+ *
  */
-public class Mammoth {
+public class SeatEmptyState implements State {
 
-  private State state;
+  private static final Logger LOGGER = LoggerFactory.getLogger(SeatEmptyState.class);
 
-  public Mammoth() {
-    state = new PeacefulState(this);
-  }
+  private SeatSales seatSales;
 
-  /**
-   * Makes time pass for the mammoth
-   */
-  public void timePasses() {
-    if (state.getClass().equals(PeacefulState.class)) {
-      changeStateTo(new AngryState(this));
-    } else {
-      changeStateTo(new PeacefulState(this));
-    }
-  }
-
-  public void changeStateTo(State newState) {
-    if (newState.getClass().getName().equals(state.getClass().getName())) {
-      throw new IllegalStateException("same state");
-    }
-    this.state = newState;
-    this.state.onEnterState();
+  public SeatEmptyState(SeatSales seatSales) {
+    this.seatSales = seatSales;
   }
 
   @Override
-  public String toString() {
-    return "The mammoth";
+  public void observe() {
+    LOGGER.info("{} Seat is Empty, oley !!", seatSales);
   }
 
-  public void observe() {
-    this.state.observe();
-  }
+
+
+
 }

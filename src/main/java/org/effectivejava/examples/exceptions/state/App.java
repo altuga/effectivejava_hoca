@@ -30,7 +30,7 @@ package org.effectivejava.examples.exceptions.state;
  * This can be a cleaner way for an object to change its behavior at runtime without resorting to
  * large monolithic conditional statements and thus improves maintainability.
  * <p>
- * In this example the {@link Mammoth} changes its behavior as time passes by.
+ * In this example the {@link SeatSales} changes its behavior as time passes by.
  * 
  */
 public class App {
@@ -40,12 +40,12 @@ public class App {
    */
   public static void main(String[] args) {
 
-    Mammoth mammoth = new Mammoth();
-    mammoth.observe();
-    mammoth.timePasses();
-    mammoth.observe();
-    mammoth.timePasses();
-    mammoth.observe();
+    SeatSales seatSales = new SeatSales();
+    seatSales.observe();
+    seatSales.timePasses();
+    seatSales.observe();
+    seatSales.timePasses();
+    seatSales.observe();
 
   }
 }

@@ -22,32 +22,41 @@
  */
 package org.effectivejava.examples.exceptions.state;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * 
- * Angry state.
- *
+ * SeatSales has internal state that defines its behavior.
+ * 
  */
-public class AngryState implements State {
+public class SeatSales {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(AngryState.class);
+  private State state;
 
-  private Mammoth mammoth;
+  public SeatSales() {
+    state = new SeatEmptyState(this);
+  }
 
-  public AngryState(Mammoth mammoth) {
-    this.mammoth = mammoth;
+  /**
+   * Makes time pass for the flight sales
+   */
+  public void timePasses() {
+    if (state.getClass().equals(SeatEmptyState.class)) {
+      changeStateTo(new SeatIsFullState(this));
+    } else {
+      changeStateTo(new SeatEmptyState(this));
+    }
+  }
+
+  public void changeStateTo(State newState) {
+    this.state = newState;
+
   }
 
   @Override
+  public String toString() {
+    return "The Seat";
+  }
+
   public void observe() {
-    LOGGER.info("{} is furious!", mammoth);
+    this.state.observe();
   }
-
-  @Override
-  public void onEnterState() {
-    LOGGER.info("{} gets angry!", mammoth);
-  }
-
 }
