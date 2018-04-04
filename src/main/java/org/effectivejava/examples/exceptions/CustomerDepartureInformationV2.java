@@ -31,7 +31,5 @@ public class CustomerDepartureInformationV2 {
         }
     }
 
-    public static void main(String[] args) {
 
-    }
 }

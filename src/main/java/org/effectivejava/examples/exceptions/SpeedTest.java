@@ -1,5 +1,7 @@
 package org.effectivejava.examples.exceptions;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.time.Instant;
 
 public class SpeedTest {
@@ -19,6 +21,8 @@ public class SpeedTest {
             for (int j = 0; j < Integer.MAX_VALUE ; j++) {
 
                     i += j + myLongArray[j];
+
+
 
             }
 

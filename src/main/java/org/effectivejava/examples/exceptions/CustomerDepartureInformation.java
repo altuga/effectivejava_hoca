@@ -1,5 +1,7 @@
 package org.effectivejava.examples.exceptions;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Map;
 
 public class CustomerDepartureInformation {
@@ -17,7 +19,7 @@ public class CustomerDepartureInformation {
     public String getByKey(String key) {
         try {
             return getValueByKey(key);
-        } catch (CustomerNotFoundException e) {
+        } catch (CustomerNotFoundException | RuntimeException  ex ) {
             String defaultValue = defaultValues.get(key);
             valuesFromDB.put(key, defaultValue);
             return defaultValue;
@@ -32,7 +34,5 @@ public class CustomerDepartureInformation {
         }
     }
 
-    public static void main(String[] args) {
 
-    }
 }
