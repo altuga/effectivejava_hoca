@@ -25,7 +25,7 @@ package state;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
-import com.kodcu.examples.exceptions.state.SeatSales;
+
 import org.effectivejava.examples.exceptions.state.SeatSales;
 import org.junit.After;
 import org.junit.Before;
@@ -92,7 +92,7 @@ public class SeatSalesTest {
     assertEquals(3 , appender.getLogSize());
 
 
-    // TODO 1 - Add stress state
+    // TODO 1 - Add rezerved state
     // TODO 2 - if same state entered then throw an Exception
     // TODO 3 - if state is null then throw an Exception
 
