@@ -26,6 +26,7 @@ import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
 import com.kodcu.examples.exceptions.state.SeatSales;
+import org.effectivejava.examples.exceptions.state.SeatSales;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
