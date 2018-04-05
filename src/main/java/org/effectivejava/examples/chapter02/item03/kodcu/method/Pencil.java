@@ -7,7 +7,7 @@ public class Pencil {
 	private Pencil() {
 	}
 
-	public static Pencil getInstance() { // possible multi thread attaks
+	public static synchronized Pencil  getInstance() { // possible multi thread attaks
 		return INSTANCE;
 	}
 
@@ -19,5 +19,10 @@ public class Pencil {
 	public static void main(String[] args) {
 		Pencil pencil = Pencil.getInstance();
 		pencil.write();
+
+		// method advantage : you can use it in lambda exp
+		//Pencil::getInstance
 	}
+
+
 }
