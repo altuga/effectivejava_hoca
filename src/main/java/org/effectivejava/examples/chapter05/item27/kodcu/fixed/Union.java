@@ -23,7 +23,7 @@ public class Union {
 
 		/*
         Set<Integer> ints = new HashSet<Integer>(Arrays.asList(12, 13, 14));
-        Set<Integer> go = birlestir(guys, ints);
+        Set<Integer> go = union(guys, ints);
         for (Integer intValue : go) {
             System.out.println(intValue);
         }
