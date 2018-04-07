@@ -4,39 +4,42 @@ package org.effectivejava.examples.chapter05.item23.kodcu.fixed;
 import java.util.ArrayList;
 import java.util.List;
 
-class A {}
-class B extends A {}
-class C extends B {}
-class D extends B {}
+/*
+class Arac extends Object{}
+class Araba extends Arac {}
+class SporAraba extends Araba {}
+class AileArabasi extends Araba {}
 
 
 public class TypeShowCase {
 
-    List<? extends A> la;
-    List<? super B> lb;
+    List<? extends Arac> aracListesi;
+    List<? super Araba> arabaListesi;
 
     {
 
-        la = new ArrayList<B>();
-        la = new ArrayList<C>();
-        la = new ArrayList<D>();
+        aracListesi = new ArrayList<Araba>(); // ??
+        aracListesi = new ArrayList<SporAraba>(); // ??
+        aracListesi = new ArrayList<AileArabasi>(); // ??
 
 
-        lb = new ArrayList<A>();
-       // lb = new ArrayList<C>();
+        arabaListesi = new ArrayList<Arac>(); // ??
+        arabaListesi = new ArrayList<AileArabasi>(); // ??
 
-        otherMethod(lb);
+        //someMethod(aracListesi);
 
 
     }
 
-    public void someMethod(List<? extends B> lb) {
-        B b = lb.get(0); // is fine
-        lb.add(new B()); //will not compile as we do not know the type of the list, only that it is bounded above by B
+    public void someMethod(List<? extends Araba> lb) {
+        Araba araba = lb.get(0); // ??
+        lb.add(new Araba()); // ??
     }
 
-    public void otherMethod(List<? super B> lb) {
-        B b = lb.get(0); // will not compile as we do not know whether the list is of type B, it may be a List<A> and only contain instances of A
-        lb.add(new B()); // is fine, as we know that it will be a super type of A
+    public void otherMethod(List<? super Araba> lb) {
+        Araba araba = lb.get(0);  // ??
+        lb.add(new Araba()); // ??
     }
+
 }
+*/

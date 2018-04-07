@@ -8,10 +8,11 @@ import java.util.Set;
 public class KelimeBirlestirmece {
 
 
-    public static Set union(Set s1, Set s2) {
+    public static Set birlestir(Set s1, Set s2) {
         Set result = new HashSet(s1);
         result.addAll(s2);
         return result;
+
     }
 
 
@@ -22,17 +23,17 @@ public class KelimeBirlestirmece {
                 "Ot"));
 
         // TODO
-        /*
+/*
         Set<Integer> ints = new HashSet<Integer>(Arrays.asList(12, 13, 14));
         Set<Integer> go = birlestir(isimler, ints);
         for (Integer intValue : go) {
             System.out.println(intValue);
         }
-        */
+
+*/
 
 
-
-        Set<String> aflCio = union(isimler, soyadlar);
+        Set<String> aflCio = birlestir(isimler, soyadlar);
         System.out.println(aflCio);
     }
 }

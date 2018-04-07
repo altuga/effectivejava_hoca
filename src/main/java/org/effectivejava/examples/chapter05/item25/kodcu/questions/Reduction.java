@@ -49,7 +49,6 @@ public class Reduction {
 		// Reduce intList using each of the above reducers
 		System.out.println(reduce(intList, SUM, 0));
 		System.out.println(reduce(intList, PRODUCT, 1));
-		System.out.println(reduce(intList, MAX, Integer.MIN_VALUE));
-		System.out.println(reduce(intList, MIN, Integer.MAX_VALUE));
+
 	}
 }
