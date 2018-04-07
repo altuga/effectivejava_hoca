@@ -26,10 +26,13 @@ import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
 
+import org.effectivejava.examples.exceptions.state.SeatEmptyState;
 import org.effectivejava.examples.exceptions.state.SeatSales;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.slf4j.LoggerFactory;
 
 import java.util.LinkedList;
@@ -47,6 +50,9 @@ public class SeatSalesTest {
 
   private InMemoryAppender appender;
 
+
+  @Rule
+  public ExpectedException thrown =  ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -90,6 +96,19 @@ public class SeatSalesTest {
     seatSales.observe();
     assertEquals("The Seat Seat is Empty, oley !!", appender.getLastMessage());
     assertEquals(3 , appender.getLogSize());
+
+
+    thrown.expect(IllegalStateException.class);
+    //thrown.expectMessage("Seat state is same");
+    seatSales.changeStateTo(new SeatEmptyState(seatSales));
+
+
+    thrown.expect(IllegalArgumentException.class);
+    //thrown.expectMessage("Seat state is same");
+    seatSales.changeStateTo(null);
+
+
+
 
 
     // TODO 1 - Add rezerved state

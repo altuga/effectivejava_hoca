@@ -47,6 +47,9 @@ public class SeatSales {
   }
 
   public void changeStateTo(State newState) {
+    if(newState.getClass().getName().equalsIgnoreCase(this.state.getClass().getName())) {
+      //throw new IllegalStateException("Seat state is same");
+    }
     this.state = newState;
 
   }
