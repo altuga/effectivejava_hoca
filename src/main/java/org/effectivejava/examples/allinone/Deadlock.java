@@ -1,6 +1,9 @@
 // ITEM 79
 package org.effectivejava.examples.allinone;
 
+import java.util.Hashtable;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class Deadlock {
 
     /*
@@ -10,6 +13,7 @@ public class Deadlock {
      3 - In the ulticore era, it is more important than ever not to oversynchronize.
      4 - Synchronize our class internally only if there is a good reason to do so, and document your
 decision @ThreadSafe
+
      */
     public static void main(String[] args) {
         // These are the two resource objects we'll try to get locks for
