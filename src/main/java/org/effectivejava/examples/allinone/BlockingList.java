@@ -4,8 +4,7 @@ package org.effectivejava.examples.allinone;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
+
 
 public class BlockingList<T> {
 
