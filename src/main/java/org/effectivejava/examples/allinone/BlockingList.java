@@ -1,8 +1,10 @@
+// ITEM 81
 package org.effectivejava.examples.allinone;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class BlockingList<T> {
 
@@ -10,11 +12,9 @@ public class BlockingList<T> {
     *
     *  1 -  If you use LinkedList, ArrayList ... then synchronization is your responsibility
     *  2 -  Always use the wait inside a loop;
-    *  3 -  ConcurrentHashMap is better than using  Collections.synchronizedMap
-    *
     */
 
-    private Queue<T> queue = new LinkedList<T>();
+    private Queue<T> queue = new LinkedList<>();
     private int capacity;
 
     public BlockingList(int capacity) {
