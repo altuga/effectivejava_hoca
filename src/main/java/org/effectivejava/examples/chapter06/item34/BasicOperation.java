@@ -1,7 +1,7 @@
 // Emulated extensible enum using an interface - Basic implementation - Page 165
 package org.effectivejava.examples.chapter06.item34;
 
-public enum BasicOperation implements Operation {
+public enum BasicOperation implements org.effectivejava.examples.chapter06.item34.Operation {
 	PLUS("+") {
 		public double apply(double x, double y) {
 			return x + y;

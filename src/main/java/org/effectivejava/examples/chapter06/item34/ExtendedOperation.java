@@ -4,7 +4,7 @@ package org.effectivejava.examples.chapter06.item34;
 import java.util.Arrays;
 import java.util.Collection;
 
-public enum ExtendedOperation implements Operation {
+public enum ExtendedOperation implements org.effectivejava.examples.chapter06.item34.Operation {
 	EXP("^") {
 		public double apply(double x, double y) {
 			return Math.pow(x, y);
@@ -38,16 +38,16 @@ public enum ExtendedOperation implements Operation {
 	}
 
 	// test parameter is a bounded type token (Item 29)
-	private static <T extends Enum<T> & Operation> void test(Class<T> opSet,
-			double x, double y) {
-		for (Operation op : opSet.getEnumConstants())
+	private static <T extends Enum<T> & org.effectivejava.examples.chapter06.item34.Operation> void test(Class<T> opSet,
+																										 double x, double y) {
+		for (org.effectivejava.examples.chapter06.item34.Operation op : opSet.getEnumConstants())
 			System.out.printf("%f %s %f = %f%n", x, op, y, op.apply(x, y));
 	}
 
 	// test parameter is a bounded wildcard type (Item 28)
-	private static void test2(Collection<? extends Operation> opSet, double x,
-			double y) {
-		for (Operation op : opSet)
+	private static void test2(Collection<? extends org.effectivejava.examples.chapter06.item34.Operation> opSet, double x,
+							  double y) {
+		for (org.effectivejava.examples.chapter06.item34.Operation op : opSet)
 			System.out.printf("%f %s %f = %f%n", x, op, y, op.apply(x, y));
 	}
 }

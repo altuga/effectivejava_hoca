@@ -1,5 +1,5 @@
 // Program containing annotations with a parameter - Page 172
-package org.effectivejava.examples.chapter06.item35;
+package org.effectivejava.examples.chapter06.third.item39;
 
 import java.util.ArrayList;
 import java.util.List;

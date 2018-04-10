@@ -1,5 +1,5 @@
 // Program containing marker annotations - Page 170
-package org.effectivejava.examples.chapter06.item35;
+package org.effectivejava.examples.chapter06.third.item39;
 
 public class Sample {
 	@Test

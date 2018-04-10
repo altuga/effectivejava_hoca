@@ -1,5 +1,5 @@
 // Program to process marker annotations - Page 171
-package org.effectivejava.examples.chapter06.item35;
+package org.effectivejava.examples.chapter06.third.item39;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

@@ -1,5 +1,5 @@
 // What does this program print? - Page 194
-package org.effectivejava.examples.chapter07.item41;
+package org.effectivejava.examples.chapter07.item41.kodcu.questions;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,5 @@
-// Annotation type with an array parameter -  Page 173
-package org.effectivejava.examples.chapter06.item35;
+
+package org.effectivejava.examples.chapter06.third.item39;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
