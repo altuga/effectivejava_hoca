@@ -7,7 +7,7 @@ public class Pencil {
 	private Pencil() {
 	}
 
-	public static synchronized Pencil  getInstance() { // possible multi thread attaks
+	public static Pencil  getInstance() { // possible multi thread attaks
 		return INSTANCE;
 	}
 
