@@ -1,13 +1,15 @@
-// Public class with exposed immutable fields - questionable
+
 package org.effectivejava.examples.chapter04.item14;
 
 public final class Time {
 	private static final int HOURS_PER_DAY = 24;
 	private static final int MINUTES_PER_HOUR = 60;
 
-	//it is less harmful if the fields are immutable.
+	//değişmez olması daha az zarar vericidir.
+	// public erişim belirliyicisine sahip global alanların final ile korunması ??
 	public final int hour;
 	public final int minute;
+
 
 	public Time(int hour, int minute) {
 		if (hour < 0 || hour >= HOURS_PER_DAY)
@@ -17,5 +19,5 @@ public final class Time {
 		this.hour = hour;
 		this.minute = minute;
 	}
-	// Remainder omitted
+
 }

@@ -1,9 +1,9 @@
-// Encapsulation of data by accessor methods and mutators
+
 package org.effectivejava.examples.chapter04.item14;
 
 class Point {
-	private double x;
-	private double y;
+	private final double x;
+	private final double y;
 
 	public Point(double x, double y) {
 		this.x = x;
@@ -14,15 +14,13 @@ class Point {
 		return x;
 	}
 
+
+
 	public double getY() {
 		return y;
 	}
 
-	public void setX(double x) {
-		this.x = x;
-	}
 
-	public void setY(double y) {
-		this.y = y;
-	}
+
+
 }
