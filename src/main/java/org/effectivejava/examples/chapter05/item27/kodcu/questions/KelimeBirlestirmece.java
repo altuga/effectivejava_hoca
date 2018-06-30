@@ -1,4 +1,4 @@
-// Generic union method and program to exercise it - pages 129 - 130
+
 package org.effectivejava.examples.chapter05.item27.kodcu.questions;
 
 import java.util.Arrays;
