@@ -1,4 +1,4 @@
-// Generic union method with wildcard types - Pages 137-138
+
 package org.effectivejava.examples.chapter05.item28.kodcu.questions;
 
 import java.util.HashSet;
