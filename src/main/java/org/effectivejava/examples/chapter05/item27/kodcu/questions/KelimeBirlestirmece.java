@@ -8,7 +8,7 @@ import java.util.Set;
 public class KelimeBirlestirmece {
 
 
-    public static Set birlestir(Set s1, Set s2) {
+    public static  Set birlestir(Set s1, Set s2) {
         Set result = new HashSet(s1);
         result.addAll(s2);
         return result;
@@ -17,23 +17,22 @@ public class KelimeBirlestirmece {
 
 
     public static void main(String[] args) {
-        Set<String> isimler = new HashSet<String>(Arrays.asList("Tom", "Mehmet",
-                "Cuneyt"));
-        Set<String> soyadlar = new HashSet<String>(Arrays.asList("Sonmez", "Ates",
-                "Ot"));
+        Set<String> marmaraBolgesiSehirleri = new HashSet<String>(Arrays.asList("Edirne", "Edirne", "Tekirdag", "Kocaeli"));
+        Set<String> egeBolgesiSehirleri = new HashSet<String>(Arrays.asList("Izmir", "Aydin", "Mugla"));
+
+        Set aflCio = birlestir(marmaraBolgesiSehirleri, egeBolgesiSehirleri);
+        System.out.println(aflCio);
 
         // TODO
+
 /*
         Set<Integer> ints = new HashSet<Integer>(Arrays.asList(12, 13, 14));
-        Set<Integer> go = birlestir(isimler, ints);
+        Set<Integer> go = birlestir(marmaraBolgesiSehirleri, egeBolgesiSehirleri);
         for (Integer intValue : go) {
             System.out.println(intValue);
         }
 
 */
 
-
-        Set<String> aflCio = birlestir(isimler, soyadlar);
-        System.out.println(aflCio);
     }
 }
