@@ -1,14 +1,14 @@
 
 package org.effectivejava.examples.chapter06.item30.kodcu.questions;
 
-enum PayrollDay {
-	MONDAY(PayType.WEEKDAY), TUESDAY(PayType.WEEKDAY), WEDNESDAY(
-			PayType.WEEKDAY), THURSDAY(PayType.WEEKDAY), FRIDAY(PayType.WEEKDAY), SATURDAY(
-			PayType.WEEKEND), SUNDAY(PayType.WEEKEND);
+enum Bordro {
+	PAZARTESI(PayType.HAFTA_ICI), SALI(PayType.HAFTA_ICI), CARSAMBA(
+			PayType.HAFTA_ICI), PERSEMBE(PayType.HAFTA_ICI), CUMA(PayType.HAFTA_ICI), CUMARTESI(
+			PayType.HAFTA_SONU), PAZAR(PayType.HAFTA_SONU);
 
 	private final PayType payType;
 
-	PayrollDay(PayType payType) {
+    Bordro(PayType payType) {
 		this.payType = payType;
 	}
 
@@ -18,12 +18,12 @@ enum PayrollDay {
 
 	// The strategy enum type
 	private enum PayType {
-		WEEKDAY {
+		HAFTA_ICI {
 			double overtimePay(double hours, double payRate) {
 				return hours * payRate * 2;
 			}
 		},
-		WEEKEND {
+		HAFTA_SONU {
 			double overtimePay(double hours, double payRate) {
 				return hours * payRate / 2;
 			}
@@ -37,4 +37,8 @@ enum PayrollDay {
 			return basePay + overtimePay(hoursWorked, payRate);
 		}
 	}
+
+    public static void main(String[] args) {
+        System.out.println(Bordro.CUMA.pay(40, 100));
+    }
 }
