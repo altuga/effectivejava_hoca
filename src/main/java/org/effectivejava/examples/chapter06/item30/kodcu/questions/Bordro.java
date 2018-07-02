@@ -2,43 +2,42 @@
 package org.effectivejava.examples.chapter06.item30.kodcu.questions;
 
 enum Bordro {
-	PAZARTESI(PayType.HAFTA_ICI), SALI(PayType.HAFTA_ICI), CARSAMBA(
-			PayType.HAFTA_ICI), PERSEMBE(PayType.HAFTA_ICI), CUMA(PayType.HAFTA_ICI), CUMARTESI(
-			PayType.HAFTA_SONU), PAZAR(PayType.HAFTA_SONU);
 
-	private final PayType payType;
+	PAZARTESI(OdemeTipi.HAFTA_ICI), SALI(OdemeTipi.HAFTA_ICI), CARSAMBA(
+			OdemeTipi.HAFTA_ICI), PERSEMBE(OdemeTipi.HAFTA_ICI), CUMA(OdemeTipi.HAFTA_ICI), CUMARTESI(
+			OdemeTipi.HAFTA_SONU), PAZAR(OdemeTipi.HAFTA_SONU);
 
-    Bordro(PayType payType) {
-		this.payType = payType;
+	private final OdemeTipi odemeTipi;
+
+    Bordro(OdemeTipi odemeTipi) {
+		this.odemeTipi = odemeTipi;
 	}
 
-	double pay(double hoursWorked, double payRate) {
-		return payType.pay(hoursWorked, payRate);
+	double tutarHesapla(double calistigiSaat, double oran) {
+		return odemeTipi.odemeYap(calistigiSaat, oran);
 	}
 
 	// The strategy enum type
-	private enum PayType {
+	private enum OdemeTipi {
 		HAFTA_ICI {
-			double overtimePay(double hours, double payRate) {
-				return hours * payRate * 2;
+			double tutarHesapla(double saat, double oran) {
+				return saat * oran * 2;
 			}
 		},
 		HAFTA_SONU {
-			double overtimePay(double hours, double payRate) {
-				return hours * payRate / 2;
+			double tutarHesapla(double saat, double oran) {
+				return saat * oran / 2;
 			}
 		};
-		private static final int HOURS_PER_SHIFT = 8;
 
-		abstract double overtimePay(double hrs, double payRate);
 
-		double pay(double hoursWorked, double payRate) {
-			double basePay = hoursWorked * payRate;
-			return basePay + overtimePay(hoursWorked, payRate);
+		abstract double tutarHesapla(double saat, double oran);
+
+		double odemeYap(double calistigiSaat, double oran) {
+			double bazTutar = calistigiSaat * oran;
+			return bazTutar + tutarHesapla(calistigiSaat, oran);
 		}
 	}
 
-    public static void main(String[] args) {
-        System.out.println(Bordro.CUMA.pay(40, 100));
-    }
+
 }
