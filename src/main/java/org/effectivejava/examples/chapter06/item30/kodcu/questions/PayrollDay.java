@@ -1,4 +1,4 @@
-// The strategy enum pattern
+
 package org.effectivejava.examples.chapter06.item30.kodcu.questions;
 
 enum PayrollDay {
