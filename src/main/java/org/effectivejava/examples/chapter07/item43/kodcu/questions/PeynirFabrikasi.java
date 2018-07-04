@@ -3,12 +3,12 @@ package org.effectivejava.examples.chapter07.item43.kodcu.questions;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class PeynirFabrikasi {
 
-    private static final List<Peynir> stok = new ArrayList();
+    private static final List<Peynir> stok = new ArrayList<Peynir>();
 
 
     /**
@@ -16,7 +16,7 @@ public class PeynirFabrikasi {
      * or null if no cheeses are available for purchase.
      */
     public static List<Peynir> peynirleriGetir() {
-        if (stok.size() == 0) {
+        if (stok.isEmpty()) {
             return null;
         }
         return stok;
@@ -26,7 +26,7 @@ public class PeynirFabrikasi {
     public static void main(String[] args) {
 
         List<Peynir> peynirList = PeynirFabrikasi.peynirleriGetir();
-        if (peynirList != null &&  peynirList.contains(Peynir.EZINE)) {
+        if ( peynirList != null && peynirList.contains(Peynir.EZINE)) {
             System.out.println("Peynir budur");
         }
     }
