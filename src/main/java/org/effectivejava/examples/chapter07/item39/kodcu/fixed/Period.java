@@ -1,4 +1,4 @@
-// Broken "immutable" time period class - Page 184
+
 package org.effectivejava.examples.chapter07.item39.kodcu.fixed;
 
 import java.util.Date;
@@ -9,8 +9,8 @@ public final class Period {
 
 
     public Period(Date start, Date end) {
-        this.start = new Date(start.getTime());
-        this.end = new Date(end.getTime());
+            this.start = new Date(start.getTime());
+            this.end = new Date(end.getTime());
 
         if (this.start.compareTo(this.end) > 0)
             throw new IllegalArgumentException(start + " after " + end);
