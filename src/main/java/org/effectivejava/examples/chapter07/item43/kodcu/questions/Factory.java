@@ -1,9 +1,8 @@
-// Sample uses of varargs
+
 package org.effectivejava.examples.chapter07.item43.kodcu.questions;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.List;
 
 public class Factory {
 
