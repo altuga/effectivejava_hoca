@@ -56,8 +56,8 @@ public class Serum {
 		sodiumIon = builder.sodiumIon;
 		magnesium = builder.magnesium;
 		creatine = builder.creatine;
-		globulin = builder.carbohydrate;
-		carbohydrate = builder.globulin;
+		globulin = builder.globulin;
+		carbohydrate = builder.carbohydrate;
         System.out.println("Serum is created");
 	}
 
